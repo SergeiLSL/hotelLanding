@@ -1,6 +1,5 @@
 //====================================================================================================
 .footer {
-
    background: #121212;
    // .footer__container
    &__container {
@@ -10,8 +9,8 @@
    }
    // .footer__nav
    &__nav {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      justify-content: space-between;
       align-items: center;
       @media (max-width: $mobile) {
          display: flex;
@@ -20,20 +19,24 @@
    }
    // .footer__copywrait
    &__copywrait {
-      justify-self: center;
       font-size: rem(12);
       line-height: 125%; /* 15/12 */
       color: $textWhite;
+      padding-left: rem(125);
+      width: 100%;
+      text-align: center;
+      @media (max-width: $mobile) {
+         padding: 0;
+      }
    }
    // .footer__social
    &__social {
       display: flex;
       gap: rem(23);
       justify-self: end;
-      @media (max-width:$mobile){
-         margin-bottom: rem(10);  
+      @media (max-width: $mobile) {
+         margin-bottom: rem(10);
       }
-
    }
    // .footer__item
    &__item {
