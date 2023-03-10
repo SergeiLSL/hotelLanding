@@ -5,7 +5,7 @@
    &__container {
       @include adaptiveValue("padding-top", 24, 20);
       @include adaptiveValue("padding-bottom", 38, 15);
-      border-top: 1.8px solid rgba(255, 255, 255, 0.1);
+      // border-top: 1.8px solid rgba(255, 255, 255, 0.1);
    }
    // .footer__nav
    &__nav {

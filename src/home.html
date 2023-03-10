@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{
-	"title":"HotelLandingPage"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-            hotelLandingPage
+@@include('html/_head.htm',{
+"title":"HotelLandingPage"
+})
 
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_js.htm',{})
-	</body>
+<body>
+   <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page">
+
+         <section class="page__contact contact">
+            <div class="contact__container">
+               <div class="contact__inner">
+                  <div class="contact__item">
+                     <ul class="contact__nav">
+                        <li class="contact__link contact__link_title">Quick link</li>
+                        <li class="contact__link">Home</li>
+                        <li class="contact__link">Services</li>
+                        <li class="contact__link">About us</li>
+                        <li class="contact__link">Contact</li>
+                     </ul>
+                  </div>
+
+                  <div data-da=".contact__container, 768, 0" class="contact__forms forms-contact">
+                     <h2 class="forms-contact__title">Get in Touch</h2>
+                     <p class="forms-contact__text">
+                        Amet minim mollit non deserunt ullamco est
+                        sit aliqua dolor do amet sint.
+                     </p>
+                     <form class="form" action="#">
+                        <input class="form__input" type="text" placeholder="Enter email">
+                        <button class="form__btn" type="submit">Subscribe</button>
+                     </form>                     
+                  </div>
+
+                  <div class="contact__item contact__item_right">
+                     <ul class="contact__nav">
+                        <li class="contact__link contact__link_title">Useful</li>
+                        <li class="contact__link">Privacy policy</li>
+                        <li class="contact__link">Legal</li>
+                        <li class="contact__link">FAQ</li>
+                        <li class="contact__link">Blogs</li>
+                     </ul>
+                  </div>
+
+               </div>
+            </div>
+         </section>
+
+      </main>
+      @@include('html/_footer.htm',{})
+   </div>
+   @@include('html/_js.htm',{})
+</body>
+
 </html>
