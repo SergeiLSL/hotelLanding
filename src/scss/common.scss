@@ -5,7 +5,7 @@
    line-height: 133.02%;
    color: $mainColor;
    span {
-      color: #FF7500;
+      color: #ff7500;
    }
 }
 
@@ -16,3 +16,65 @@
    color: $mainColor;
    opacity: 0.4;
 }
+//========================================================================================================================================================
+// ? Если раскомментировать этот блок рейтинг можно изменять 
+// .rating {
+//    position: relative;
+//    font-size: 30px; /* можно изменять размер звездочек*/
+//    display: inline-block;
+//    &::before {
+//       content: "★★★★★";
+//       display: block;
+//       color: #de8f32;
+//    }
+//    &:not(:last-child) {
+//       margin-bottom: rem(8);
+//    }
+//    // .rating-users__items
+//    &__items {
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//       top: 0;
+//       left: 0;
+//       display: flex;
+//       flex-direction: row-reverse; /* разворрачиваем радио точки в обратном порядке*/
+//       overflow: hidden;
+//    }
+//    // .rating-users__item
+//    &__item {
+//       /* убираем радио точки*/
+//       position: absolute;
+//       width: 0%;
+//       height: 0%;
+//       opacity: 0;
+//       visibility: hidden;
+//       top: 0;
+//       left: 0;
+//       &:checked,
+//       &:checked ~ .rating__label {
+//          color: #ffd300;
+//       }
+//       &:hover,
+//       &:hover ~ .rating__label,
+//       &:checked ~ .rating__label:hover {
+//          /*при наведении на звездочку она меняет цвет*/
+//          color: #ffef9f;
+//       }
+//    }
+//    // .rating-users__label
+//    &__label {
+//       flex: 0 0 20%;
+//       height: 100%;
+//       cursor: pointer; /* превращаем курсор в руку с пальцем*/
+//       color: #f3f2f2; /*цвет звездочки*/ /*цвет звездочки*/
+//       &::before {
+//          /*надо наложить на белые звездочки звездочки с рейтингом*/
+//          content: "★";
+//          display: block;
+//          transition: color 0.3s ease 0s;
+//       }
+//    }
+// }
+//========================================================================================================================================================
+

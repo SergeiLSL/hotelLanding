@@ -5,12 +5,14 @@
    // .page__about
    &__about {
    }
+   // .page__interior
+   &__interior {
+   }
    // .page__contact
    &__contact {
    }
 }
 //========================================================================================================================================================
-
 
 //========================================================================================================================================================
 
@@ -46,7 +48,7 @@
          margin-bottom: rem(40);
       }
    }
-   // .room__column-images-big 
+   // .room__column-images-big
    &__column-images-big {
       @media (min-width: $mobile) {
          flex: 0 1 36.84%;
@@ -62,13 +64,13 @@
    &__image-ibg {
       padding-bottom: 69.375%;
       &_big {
-         padding-bottom: 130.476%; 
-         @media (max-width: rem(1100)){
-            padding-bottom: 132%; 
-         }           
-         @media (max-width:$tablet){
-            padding-bottom: 134%; 
-         }        
+         padding-bottom: 130.476%;
+         @media (max-width: rem(1100)) {
+            padding-bottom: 132%;
+         }
+         @media (max-width: $tablet) {
+            padding-bottom: 134%;
+         }
       }
       img {
          width: 100%;
@@ -221,6 +223,163 @@
    }
 }
 //====================================================================================================
+.interior {
+   background: #ffffff;
+   // background: #555867;
+   position: relative;
+   // .interior__container
+   &__container {
+      @media (min-width: $mobile) {
+         min-height: 100%;
+         display: flex;
+      }
+   }
+   // .interior__content
+   &__content {
+      flex: 0 1 52.37%;
+   }
+   // .interior__services
+   &__services {
+      // flex: 0 1 62.98%;
+      // overflow: visible;
+   }
+}
+
+.content-interior {
+   @include adaptiveValue("padding-top", 220, 100);
+   @include adaptiveValue("padding-bottom", 105, 40);
+   max-width: rem(349);
+   width: 100%;
+   margin-right: 97px;
+   // .content-interior__title
+   &__title {
+      font-weight: 700;
+      font-size: rem(32);
+      line-height: 133%;
+      &:not(:last-child) {
+         margin-bottom: rem(28);
+      }
+   }
+   // .content-interior__rating
+   &__rating {
+      position: relative;
+      font-size: 30px; /*можно изменять размер звездочек*/
+      display: inline-block;
+      &::before {
+         content: "★★★★★";
+         display: block;
+         // color: #de8f32;
+         color: #ffd300;
+      }
+      &:not(:last-child) {
+         margin-bottom: rem(8);
+      }
+   }
+   // .content-interior__rating-text
+   &__rating-text {
+      font-weight: 500;
+      font-size: rem(18);
+      line-height: 162.52%;
+      opacity: 0.6;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 80, 30);
+      }
+   }
+   // .content-interior__users
+   &__users {
+      display: flex;
+      padding-left: rem(15);
+      &:not(:last-child) {
+         margin-bottom: rem(21);
+      }
+   }
+   // .content-interior__user
+   &__user {
+   }
+   // .content-interior__image
+   &__image {
+      width: rem(57);
+      height: rem(57);
+      border-radius: 50%;
+      margin-left: rem(-15);
+      img {
+         width: 100%;
+         height: 100%;
+         border-radius: 50%;
+         object-fit: cover;
+      }
+   }
+   // .content-interior__users-commit
+   &__users-commit {
+      max-width: rem(262);
+      font-weight: 500;
+      font-size: rem(18);
+      line-height: 162.52%;
+      opacity: 0.6;
+   }
+}
+
+.services-interior {
+   position: relative;
+   right: -50px;
+   // width: rem(720);
+   // overflow: visible;
+   // .services-interior__row
+   &__row {
+      display: flex;
+      flex-wrap: wrap;
+      // margin: 0 rem(-33);
+      @include adaptiveValue("column-gap", 66, 20);
+      @include adaptiveValue("row-gap", 51, 20);
+      position: absolute;
+      overflow: visible;
+      width: rem(720);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+   }
+   // .services-interior__column
+   &__column {
+      max-width: rem(339);
+   }
+   // .services-interior__card
+   &__card {
+      background: #ffffff;
+      box-shadow: -14px 24px 68px -16px rgba(0, 0, 0, 0.12);
+      padding: rem(41) rem(20) rem(42) rem(26);
+   }
+   // .services-interior__icon
+   &__icon {
+      &:not(:last-child) {
+         margin-bottom: rem(15);
+      }
+      width: rem(56);
+      height: rem(56);
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+   // .services-interior__title
+   &__title {
+      font-weight: 600;
+      font-size: rem(22);
+      line-height: 120.02%;
+      text-transform: uppercase;
+      &:not(:last-child) {
+         margin-bottom: rem(14);
+      }
+   }
+   // .services-interior__text
+   &__text {
+      font-weight: 500;
+      font-size: rem(14);
+      line-height: 162.52%;
+      opacity: 0.3;
+   }
+}
 
 //========================================================================================================================================================
 .contact {
