@@ -1,4 +1,10 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.none {
+   display: none;
+}
+
+
+
 .title {
    font-weight: 700;
    @include adaptiveValue("font-size", 45, 32);

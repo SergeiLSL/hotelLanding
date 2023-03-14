@@ -223,52 +223,58 @@
    }
 }
 //====================================================================================================
+//========================================================================================================================================================
+
 .interior {
    background: #ffffff;
-   // background: #555867;
-   position: relative;
+   @include adaptiveValue("padding-bottom", 60, 40);
    // .interior__container
    &__container {
+      position: relative;
       @media (min-width: $mobile) {
          min-height: 100%;
-         display: flex;
       }
    }
    // .interior__content
    &__content {
-      flex: 0 1 52.37%;
+      flex-basis: 30.614035%; /* 349/1140 */
    }
    // .interior__services
    &__services {
-      // flex: 0 1 62.98%;
-      // overflow: visible;
+      flex-basis: 62.982456%; /* 718/1140 */
    }
 }
 
 .content-interior {
-   @include adaptiveValue("padding-top", 220, 100);
-   @include adaptiveValue("padding-bottom", 105, 40);
-   max-width: rem(349);
+   @media (min-width:$tablet){
+      @include adaptiveValue("padding-top", 220, 100);
+      @include adaptiveValue("padding-bottom", 105, 80);
+      width: 30.614035%; /* 349/1140 */
+   }
+   @include adaptiveValue("padding-top", 50, 30);
+   @include adaptiveValue("padding-bottom", 20, 20);
+   max-width: rem(718);
    width: 100%;
-   margin-right: 97px;
+   @media (max-width:$tablet){
+      margin: 0 auto;
+   }
    // .content-interior__title
    &__title {
       font-weight: 700;
       font-size: rem(32);
       line-height: 133%;
       &:not(:last-child) {
-         margin-bottom: rem(28);
+         @include adaptiveValue("margin-bottom", 28, 10);
       }
    }
    // .content-interior__rating
    &__rating {
       position: relative;
-      font-size: 30px; /*можно изменять размер звездочек*/
+      font-size: rem(30); /*можно изменять размер звездочек*/
       display: inline-block;
       &::before {
          content: "★★★★★";
          display: block;
-         // color: #de8f32;
          color: #ffd300;
       }
       &:not(:last-child) {
@@ -282,7 +288,12 @@
       line-height: 162.52%;
       opacity: 0.6;
       &:not(:last-child) {
-         @include adaptiveValue("margin-bottom", 80, 30);
+         @include adaptiveValue("margin-bottom", 80, 10);
+      }
+      @media (max-width:$tablet){
+         &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 40, 20);
+         }
       }
    }
    // .content-interior__users
@@ -320,34 +331,41 @@
 }
 
 .services-interior {
-   position: relative;
-   right: -50px;
-   // width: rem(720);
-   // overflow: visible;
+   @media (min-width:$tablet){
+      position: absolute;
+      top: rem(-46);
+      @include adaptiveValue("right", -24, 45);
+      width: 62.982456%; /* 718/1140 */
+   }
+   max-width: rem(718);
+   margin: 0 auto;
    // .services-interior__row
    &__row {
       display: flex;
       flex-wrap: wrap;
-      // margin: 0 rem(-33);
-      @include adaptiveValue("column-gap", 66, 20);
-      @include adaptiveValue("row-gap", 51, 20);
-      position: absolute;
-      overflow: visible;
-      width: rem(720);
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+      margin: 0 rem(-20);
+      margin-bottom: rem(-40);
    }
    // .services-interior__column
    &__column {
-      max-width: rem(339);
+      flex: 0 1 50%;
+      padding: 0 rem(20);
+      @media (max-width:$mobile){
+         flex: 0 1 100%;  
+      }
    }
    // .services-interior__card
    &__card {
+      margin-bottom: rem(40);
+      max-width: rem(339);
       background: #ffffff;
-      box-shadow: -14px 24px 68px -16px rgba(0, 0, 0, 0.12);
+      box-shadow: rem(-14) rem(24) rem(68) rem(-16) rgba(0, 0, 0, 0.12);
       padding: rem(41) rem(20) rem(42) rem(26);
+      @media (max-width:$mobile){
+         max-width: rem(718);
+         padding: rem(25) rem(20) rem(25) rem(26);
+         margin-bottom: rem(20);
+      }
    }
    // .services-interior__icon
    &__icon {
@@ -368,6 +386,7 @@
       font-size: rem(22);
       line-height: 120.02%;
       text-transform: uppercase;
+      flex: 1 1 auto; /*тексту  позволяем все действия*/
       &:not(:last-child) {
          margin-bottom: rem(14);
       }
