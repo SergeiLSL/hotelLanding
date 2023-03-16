@@ -1,4 +1,7 @@
 .page {
+   // .page__section
+   &__service {
+   }
    // .page__room
    &__room {
    }
@@ -13,6 +16,175 @@
    }
 }
 //========================================================================================================================================================
+//========================================================================================================================================================
+
+.service {
+   @include adaptiveValue("padding-top", 70, 30);
+   @include adaptiveValue("padding-bottom", 50, 20);
+   background: #d4dcf9;
+   // .serviceservice__info
+   &__info {
+      display: flex;
+      flex-direction: column;
+      max-width: rem(475);
+      margin: 0 auto;
+      text-align: center;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 83, 20);
+      }
+   }
+   // .service__container
+   &__container {
+      background: #edd4f9;
+      @media (min-width: $mobile) {
+         min-height: 100%;
+         display: flex;
+         align-items: center;
+      }
+   }
+   // .service__services
+   &__services {
+      flex: 0 1 50%;
+   }
+   // .service__pictures
+   &__pictures {
+   }
+}
+/* ------------------------------------ */
+.pictures {
+   position: relative;
+   max-width: rem(570);
+   // .pictures__image-big
+   &__image-big {
+      border-left: 25px solid #d9d9da;
+      max-width: rem(570);
+      width: 100%;
+      img {
+         // max-width: 100%;
+      }
+      @media (min-width: $mobile) {
+         flex: 0 1 50%;
+         position: relative;
+         max-width: rem(570);
+         width: 100%;
+         @include adaptiveValue("right", -279, -15);
+         img {
+            width: 100%;
+            //width: 84.561404%; /* 482/570 */
+         }
+      }
+      @media (max-width: $mobile) {
+         flex: 0 1 100%;
+         max-width: rem(370);
+         position: relative;
+         @include adaptiveValue("right", -520, -20);
+         img {
+            width: 100%;
+            object-fit: cover;
+         }
+      }
+   }
+   // .pictures__image-small
+   &__image-small {
+      position: relative;
+      @media (max-width: $mobile) {
+         flex: 0 1 100%;
+         max-width: rem(370);
+         position: absolute;
+         padding-left: rem(15);
+         @include adaptiveValue("right", -420, 15);
+         height: auto;
+         left: 0%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         object-fit: cover;
+         img {
+            width: 100%;
+            object-fit: cover;
+         }
+      }
+      @media (min-width: $mobile) {
+         flex-basis: rem(439);
+         position: absolute;
+         width: 100%;
+         height: auto;
+         left: 0%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         object-fit: cover;
+         img {
+            width: 100%;
+            max-width: 439px; /* 439/482 */
+            padding-left: rem(25);
+         }
+      }
+   }
+}
+/* ------------------------------------ */
+.services {
+   padding-top: rem(17);
+   @include adaptiveValue("padding-bottom", 50, 20);
+   // .services__item
+   &__item {
+      background: #e4f9d4;
+      max-width: rem(477);
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 60, 20);
+      }
+      @media (max-width: $mobile) {
+         max-width: rem(740);
+      }
+   }
+   // .services__body
+   &__body {
+   }
+   // .services__value
+   &__value {
+      width: rem(50);
+      height: rem(50);
+      border-radius: 50%;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: rem(24);
+      line-height: 200%;
+      background-color: #ff7500;
+      text-align: center;
+      &:not(:last-child) {
+         margin-bottom: rem(14);
+      }
+   }
+   // .services__title
+   &__title {
+      font-weight: 700;
+      font-size: rem(24);
+      line-height: 133.02%;
+      &:not(:last-child) {
+         margin-bottom: rem(14);
+      }
+   }
+   // .services__text
+   &__text {
+      font-weight: 500;
+      font-size: rem(16);
+      line-height: 175.52%;
+      opacity: 0.3;
+   }
+}
+
+.info {
+   // .info__title
+   &__title {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 18, 12);
+      }
+   }
+   // .info__text
+   &__text {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 45, 20);
+      }
+   }
+}
 
 //========================================================================================================================================================
 
@@ -28,7 +200,6 @@
       display: flex;
       flex-direction: column;
       max-width: rem(475);
-      justify-content: center;
       margin: 0 auto;
       &:not(:last-child) {
          @include adaptiveValue("margin-bottom", 45, 20);
@@ -246,7 +417,7 @@
 }
 
 .content-interior {
-   @media (min-width:$tablet){
+   @media (min-width: $tablet) {
       @include adaptiveValue("padding-top", 220, 100);
       @include adaptiveValue("padding-bottom", 105, 80);
       width: 30.614035%; /* 349/1140 */
@@ -255,7 +426,7 @@
    @include adaptiveValue("padding-bottom", 20, 20);
    max-width: rem(718);
    width: 100%;
-   @media (max-width:$tablet){
+   @media (max-width: $tablet) {
       margin: 0 auto;
    }
    // .content-interior__title
@@ -290,7 +461,7 @@
       &:not(:last-child) {
          @include adaptiveValue("margin-bottom", 80, 10);
       }
-      @media (max-width:$tablet){
+      @media (max-width: $tablet) {
          &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 40, 20);
          }
@@ -331,7 +502,7 @@
 }
 
 .services-interior {
-   @media (min-width:$tablet){
+   @media (min-width: $tablet) {
       position: absolute;
       top: rem(-46);
       @include adaptiveValue("right", -24, 45);
@@ -350,8 +521,8 @@
    &__column {
       flex: 0 1 50%;
       padding: 0 rem(20);
-      @media (max-width:$mobile){
-         flex: 0 1 100%;  
+      @media (max-width: $mobile) {
+         flex: 0 1 100%;
       }
    }
    // .services-interior__card
@@ -361,7 +532,7 @@
       background: #ffffff;
       box-shadow: rem(-14) rem(24) rem(68) rem(-16) rgba(0, 0, 0, 0.12);
       padding: rem(41) rem(20) rem(42) rem(26);
-      @media (max-width:$mobile){
+      @media (max-width: $mobile) {
          max-width: rem(718);
          padding: rem(25) rem(20) rem(25) rem(26);
          margin-bottom: rem(20);
