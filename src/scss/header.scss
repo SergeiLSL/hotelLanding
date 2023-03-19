@@ -129,10 +129,14 @@
       @include adaptiveValue("padding-right", 45, 0);
       border: rem(2) solid #fff;
       z-index: 5;
+      transition: background 0.3s ease;
+      &:hover {
+         background: #313131;
+      }
    }
 }
 
-.menu {
+.menu-top {
    // .menu__body
    &__body {
       position: relative;

@@ -62,22 +62,28 @@
    // .home__nav
    &__nav {
    }
+   // .home__item
+   &__item {
+      width: rem(235);
+      padding-bottom: rem(8);
+      border-bottom: rem(1.2) solid #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img {
+         width: rem(17);
+         height: rem(17);
+      }
+      &:not(:last-child) {
+         margin-bottom: rem(16);
+      }
+   }
    // .home__link
    &__link {
-      width: rem(235);
-      // background: #404436;
       font-weight: 500;
       font-size: rem(16);
       @include adaptiveValue("font-size", 16, 14);
       line-height: 133.02%;
-      padding-bottom: rem(8);
-      border-bottom: rem(1.2) solid #fff;
-      &:not(:last-child) {
-         margin-bottom: rem(16);
-      }
-      &::before {
-
-      }
    }
    // .home__room-big
    &__room-big {
@@ -749,12 +755,15 @@
       margin-bottom: rem(40);
       max-width: rem(339);
       background: #ffffff;
-      box-shadow: rem(-14) rem(24) rem(68) rem(-16) rgba(0, 0, 0, 0.12);
+      transition: box-shadow 0.3s ease;
       padding: rem(41) rem(20) rem(42) rem(26);
       @media (max-width: $mobile) {
          max-width: rem(718);
          padding: rem(25) rem(20) rem(25) rem(26);
          margin-bottom: rem(20);
+      }
+      &:hover {
+         box-shadow: rem(-14) rem(24) rem(68) rem(-16) rgba(0, 0, 0, 0.12);
       }
    }
    // .services-interior__icon
@@ -780,6 +789,7 @@
       &:not(:last-child) {
          margin-bottom: rem(14);
       }
+
    }
    // .services-interior__text
    &__text {
@@ -790,7 +800,19 @@
    }
 }
 
+// ! чтобы вся карточка была ссылкой
+article { 
+   position: relative;
+}
+
+h3 > a::before {
+   position: absolute;
+   content: '';
+   inset: 0;
+}
 //========================================================================================================================================================
+//========================================================================================================================================================
+
 .contact {
    background: #121212;
    // .contact__container
@@ -810,37 +832,47 @@
          margin: 0 auto;
       }
    }
-   // .contact__item
-   &__items {
+   // .contact__column-menu
+   &__column-menu {
       @include adaptiveValue("padding-top", 40, 20);
+      // .contact__column-menu_right
+      &_right {
+      }
+   }
+   // .contact__forms
+   &__forms {
+      @media (max-width: $mobile) {
+         margin: 0 auto;
+         color: $textWhite;
+         @include adaptiveValue("padding-top", 59, 20);
+      }
+   }
+}
+
+.menu {
+   // .menu__body
+   &__body {
+   }
+   // .menu__list
+   &__list {
+      display: flex;
+      flex-direction: column;
       &_right {
          text-align: right;
       }
    }
-   // .contact__nav
-   &__nav {
+   // .menu__item
+   &__item {
+      &:not(:last-child) {
+         margin-bottom: rem(20);
+      }
    }
-   // .contact__item
-   &__item { 
-   }
-   // .contact__link
+   // .menu__link
    &__link {
       @include adaptiveValue("font-size", 16, 14);
       line-height: 162.52%;
       position: relative;
-      &:not(:last-child) {
-         margin-bottom: rem(20);
-      }
       &::after {
-         // content: "";
-         // position: absolute;
-         // bottom: 0;
-         // left: 50%;
-         // width: 0;
-         // height: 2px; /* 2 px */
-         // transition: all 0.3s ease;
-         // background-color: $textWhite;
-         // display: inline-block;
          position: absolute;
          content: "";
          height: rem(1.5);
@@ -855,20 +887,11 @@
          width: 100%;
          left: 0;
       }
-      // .contact__link_title
+      // .menu__link_title
       &_title {
          font-weight: 600;
          @include adaptiveValue("font-size", 22, 18);
-         line-height: 162.52%;
          margin-bottom: rem(22);
-      }
-   }
-   // .contact__forms
-   &__forms {
-      @media (max-width: $mobile) {
-         margin: 0 auto;
-         color: $textWhite;
-         @include adaptiveValue("padding-top", 59, 20);
       }
    }
 }
@@ -932,3 +955,5 @@
       right: -1.5px;
    }
 }
+
+//========================================================================================================================================================
