@@ -84,6 +84,13 @@
       font-size: rem(16);
       @include adaptiveValue("font-size", 16, 14);
       line-height: 133.02%;
+      transition: color 0.3s ease;
+      &:hover {
+         color:#ff7500;
+      }
+   }
+   // .home__arrow
+   &__arrow {
    }
    // .home__room-big
    &__room-big {
@@ -91,7 +98,6 @@
       @include adaptiveValue("height", 565, 400);
       img {
          width: 100%;
-         // height: 100%;
          @include adaptiveValue("height", 565, 400);
          object-fit: cover;
       }
@@ -150,8 +156,25 @@
       font-size: rem(16);
       line-height: 131.02%;
       color: #565656;
+      transition: all 0.3s ease;
+      &:hover {
+         color: #ff7500;
+         font-weight: 700;
+      }
    }
 }
+
+// ! чтобы вся карточка была ссылкой
+article { 
+   position: relative;
+}
+
+h3 > a::before {
+   position: absolute;
+   content: '';
+   inset: 0;
+}
+
 //========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
@@ -440,7 +463,6 @@
    &__column-images {
       @media (min-width: $mobile) {
          flex: 0 1 28.07%;
-         margin-bottom: rem(40);
       }
    }
    // .room__column-images-big
@@ -453,12 +475,15 @@
    &__card-image {
       display: flex;
       flex-direction: column;
-      @include adaptiveValue("margin-bottom", 32, 20);
+      @include adaptiveValue("margin-bottom", 31, 20);
    }
    // .room__image
    &__image-ibg {
       padding-bottom: 69.375%;
+      // max-width: rem(320);
+      height: auto;
       &_big {
+         // max-width: rem(420);
          padding-bottom: 130.476%;
          @media (max-width: rem(1100)) {
             padding-bottom: 132%;
@@ -471,6 +496,10 @@
          width: 100%;
          height: 100%;
          object-fit: cover;
+         transition: all 0.3s;
+         &:hover {
+            transform: scale(1.02);
+         }
       }
       &:not(:last-child) {
          margin-bottom: rem(18);
@@ -495,6 +524,10 @@
       line-height: 133.02%;
       color: $mainColor;
       text-align: left;
+      transition: all 0.3s;
+      &:hover {
+         color: #ff7500;
+      }
    }
 }
 
@@ -849,7 +882,7 @@ h3 > a::before {
    }
 }
 
-.menu {
+.column-menu {
    // .menu__body
    &__body {
    }
@@ -876,7 +909,7 @@ h3 > a::before {
          position: absolute;
          content: "";
          height: rem(1.5);
-         background-color: #fff;
+         background-color: #ff7500;
          bottom: rem(-1.5);
          left: 50%;
          width: 0;
@@ -947,12 +980,17 @@ h3 > a::before {
    &__btn {
       box-sizing: border-box;
       display: inline-block;
+      opacity: 0.9;
       padding: rem(19) rem(25) rem(19) rem(24);
       background: #ff6b00;
       border-radius: 6px;
       position: absolute;
       top: -1.5px;
       right: -1.5px;
+      transition: background 0.3s ease;
+      &:hover {
+         background:  #db5c01;
+      }
    }
 }
 
