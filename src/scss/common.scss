@@ -3,7 +3,23 @@
    display: none;
 }
 
+.arrow {
+   width: rem(12);
+   height: rem(12);
+   border-top: rem(2) solid #fff;
+   border-right: rem(2) solid #fff;
+   margin-right: rem(5);
+   transition: all 0.3s;
+   cursor: pointer;
+   &:hover {
+      border-top: rem(2) solid #ff7500;
+      border-right: rem(2) solid #ff7500;
+   }
+}
 
+.arrow-right {
+   transform: rotate(45deg);
+}
 
 .title {
    font-weight: 700;
@@ -23,7 +39,7 @@
    opacity: 0.4;
 }
 //========================================================================================================================================================
-// ? Если раскомментировать этот блок рейтинг можно изменять 
+// ? Если раскомментировать этот блок можно изменять рейтинг 
 // .rating {
 //    position: relative;
 //    font-size: 30px; /* можно изменять размер звездочек*/

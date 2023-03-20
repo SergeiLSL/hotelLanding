@@ -19,15 +19,15 @@
                      <ul class="home__nav">
                         <li class="home__item">                           
                            <button data-popup="#popup" type="button" class="home__link">Book a hotel service</button>
-                           <img class="home__arrow" src="@img/home/arrow.svg" alt="arrow">
+                           <div data-popup="#popup" class="home__arrow arrow arrow-right"></div>
                         </li>
                         <li class="home__item">                           
                            <button data-popup="#popup" type="button" class="home__link">Book a hotel service</button>
-                           <img class="home__arrow" src="@img/home/arrow.svg" alt="arrow">
+                           <div data-popup="#popup" class="home__arrow arrow arrow-right"></div>
                         </li>
                         <li class="home__item">                           
                            <button data-popup="#popup" type="button" class="home__link">Book a hotel service</button>
-                           <img class="home__arrow" src="@img/home/arrow.svg" alt="arrow">
+                           <div data-popup="#popup" class="home__arrow arrow arrow-right"></div>
                         </li>
                      </ul>
                   </div>
@@ -423,9 +423,12 @@
                         sit aliqua dolor do amet sint.
                      </p>
                      <form class="form" action="#">
-                        <input class="form__input" type="text" placeholder="Enter email">
+                        <input data-error="Введен не верный E-mail" data-validate data-required="email" class="form__input" type="text" placeholder="Enter email" name="form[]">
                         <button class="form__btn" type="submit">Subscribe</button>
                      </form>
+
+
+
                   </div>
 
                   <div class="contact__column-menu contact__column-menu_right">
