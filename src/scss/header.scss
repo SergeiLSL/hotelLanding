@@ -133,6 +133,9 @@
       &:hover {
          background-color: #ff7500;
       }
+      @media (max-width: $mobile) {
+         display: none;
+      }
    }
 }
 

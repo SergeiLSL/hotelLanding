@@ -17,16 +17,16 @@
                   </div>
                   <div class="home__menu">
                      <ul class="home__nav">
-                        <li class="home__item">
-                           <a href="#" class="home__link">Book a hotel service</a>
+                        <li class="home__item">                           
+                           <button data-popup="#popup" type="button" class="home__link">Book a hotel service</button>
                            <img class="home__arrow" src="@img/home/arrow.svg" alt="arrow">
                         </li>
-                        <li class="home__item">
-                           <a href="#" class="home__link">Book a hotel service</a>
+                        <li class="home__item">                           
+                           <button data-popup="#popup" type="button" class="home__link">Book a hotel service</button>
                            <img class="home__arrow" src="@img/home/arrow.svg" alt="arrow">
                         </li>
-                        <li class="home__item">
-                           <a href="#" class="home__link">Book a hotel service</a>
+                        <li class="home__item">                           
+                           <button data-popup="#popup" type="button" class="home__link">Book a hotel service</button>
                            <img class="home__arrow" src="@img/home/arrow.svg" alt="arrow">
                         </li>
                      </ul>
@@ -485,8 +485,9 @@
 
       </main>
       @@include('html/_footer.htm',{})
-   </div>
-   @@include('html/_js.htm',{})
+   </div>  
+   @@include('html/_popup.htm',{})
+   @@include('html/_js.htm',{})   
 </body>
 
 </html>
